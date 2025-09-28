@@ -1,0 +1,359 @@
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url('../fonts/Roboto-VariableFont_wdth.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GoogleSansCode-regular';
+    src: url('../fonts/GoogleSansCode-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --space-text-border: 20px;
+
+    --main-font: 'Roboto-regular';
+    --code-font: 'GoogleSansCode-regular'
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.header {
+    padding: 10px var(--space-text-border);
+}
+
+.header__navCtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__title {
+    font-family: var(--main-font)
+}
+
+.header__nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.header__nav--item a {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-family: var(--main-font);
+    color: black;
+}
+
+.header__nav--item a:hover {
+    text-decoration: underline;
+}
+
+.presentation,
+.experience,
+.footer {
+    padding: 20px var(--space-text-border);
+    background-color: black;
+    color: white;
+}
+
+.presentation__title,
+.parcours__title,
+.experience__title,
+.contact__title,
+.footer__title {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-transform: uppercase;
+}
+
+.presentation__contentCtn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.presentation_text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-family: var(--code-font);
+    line-height: 2rem;
+    height: 180px;
+}
+
+.presentation_img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+.parcours {
+    padding: 20px var(--space-text-border);
+    font-family: var(--main-font);
+}
+
+.parcours__contentCtn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 5vh 0 0 0;
+}
+
+.parcours__article {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.parcours__article:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.parcours__img {
+    width: 100px;
+    height: 100px;
+}
+
+.parcours__verticalBar {
+    width: 2px;
+    min-height: 8.5vh;
+    background-color: black;
+    margin: 0 1rem;
+}
+
+.parcours__textCtn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 700px;
+}
+
+.parcours__article:nth-child(2n)>.parcours__textCtn {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.experience {
+    font-family: var(--main-font);
+}
+
+.experience__content {
+    padding: 5vh 0;
+}
+
+.experience__corporation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.corporation__name {
+    font-size: 1.7rem;
+}
+
+.corporation__horizontalBar {
+    margin: 10px 0;
+    height: 1px;
+    width: 8vw;
+    background-color: white;
+}
+
+.corporation__text {
+    flex: 1;
+    min-width: 250px;
+    max-width: 700px;
+    text-align: center;
+}
+
+.experience__project {
+    padding: 8vh 0 0 0;
+    display: flex;
+}
+
+.experience__project--item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project__title {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.project__img {
+    margin: 2vh 0;
+    width: 100%;
+    height: auto;
+    border: solid 1px white;
+}
+
+.project__text {
+    width: 80%;
+    font-size: 0.9rem;
+}
+
+.contact {
+    padding: 20px var(--space-text-border);
+    font-family: var(--main-font);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.contact__inputCtn {
+    position: relative;
+    width: 100%;
+}
+
+.contact_input,
+#input_textArea {
+    width: 100%;
+    padding: 1rem 0.75rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    background: transparent;
+}
+
+.contact_input:focus,
+#input_textArea:focus {
+    border-color: black;
+}
+
+.contact_label {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background: white;
+    padding: 0 0.25rem;
+}
+
+.contact_input:focus+.contact_label,
+.contact_input:not(:placeholder-shown)+.contact_label,
+#input_textArea:focus+.contact_label,
+#input_textArea:not(:placeholder-shown)+.contact_label {
+    top: -0rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    color: black;
+}
+
+#input_textArea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact_submit {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 20%;
+    height: 3.5vh;
+}
+
+.footer__articleCtn {
+    margin: 2vh 0;
+    display: flex;
+    justify-content: center;
+    gap: 30vw;
+    font-family: var(--main-font);
+}
+
+.footer__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.footer__articleTitle {
+    color: white;
+}
+
+.footer__icone {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+}
+
+@media (max-width: 650px) {
+    .header__navCtn {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__nav {
+        margin: 4vh;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .presentation_text {
+        height: 250px;
+        text-align: center;
+    }
+
+    .parcours__verticalBar {
+        display: none;
+    }
+
+    .parcours__article {
+        flex-direction: column !important;
+    }
+
+    .parcours__textCtn {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .experience__project {
+        flex-wrap: wrap;
+        gap: 5vh;
+    }
+
+    .project__text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer__icone {
+        width: 50px;
+        height: 50px;
+    }
+}
